@@ -1,0 +1,59 @@
+PythonToMac Development Guide
+
+http://docs.python-guide.org/en/latest/dev/virtualenvs/
+
+1. pip install virtualenv
+
+2. cd my_project_folder
+virtualenv <venv>
+
+3.source venv/bin/activate
+
+https://www.metachris.com/2015/11/create-standalone-mac-os-x-applications-with-python-and-py2app/
+
+1. sandwich.py
+import sys
+if sys.version_info < (3, 0):
+    # Python 2
+    import Tkinter as tk
+else:
+    # Python 3
+    import tkinter as tk
+root = tk.Tk()
+root.title("Sandwich")
+tk.Button(root, text="Make me a Sandwich").pack()
+tk.mainloop()
+
+2. pip install -U git+https://github.com/metachris/py2app.git@master
+
+3. py2applet --make-setup sandwich.py
+
+4. python setup.py py2app -A
+test app/local
+
+5. python setup.py py2app
+prod app
+
+6. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
